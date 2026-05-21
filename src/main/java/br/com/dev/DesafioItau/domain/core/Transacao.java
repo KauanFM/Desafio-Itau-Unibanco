@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Transacao {
 
-    private Integer id;
+    private Long id;
     private BigDecimal valor;
     private OffsetDateTime dataHora;
 
