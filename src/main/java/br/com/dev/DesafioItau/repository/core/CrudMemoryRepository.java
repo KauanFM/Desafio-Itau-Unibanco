@@ -27,4 +27,9 @@ public abstract class CrudMemoryRepository<T, ID> implements CrudMemoryRepositor
         database.remove(id);
     }
 
+    @Override
+    public void deleteAll() {
+        database.clear();
+    }
+
 }

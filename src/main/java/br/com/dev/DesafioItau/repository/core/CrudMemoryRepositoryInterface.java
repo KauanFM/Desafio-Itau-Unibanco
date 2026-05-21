@@ -10,4 +10,6 @@ public interface CrudMemoryRepositoryInterface<T, ID> {
 
     void deleteById(ID id);
 
+    void deleteAll();
+
 }
