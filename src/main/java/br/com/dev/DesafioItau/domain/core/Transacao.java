@@ -1,6 +1,5 @@
 package br.com.dev.DesafioItau.domain.core;
 
-import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
 import lombok.AllArgsConstructor;
@@ -15,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Transacao {
 
     private Long id;
-    private BigDecimal valor;
+    private Double valor;
     private OffsetDateTime dataHora;
 
 }

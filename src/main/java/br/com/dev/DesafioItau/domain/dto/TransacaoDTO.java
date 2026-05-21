@@ -1,6 +1,5 @@
 package br.com.dev.DesafioItau.domain.dto;
 
-import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
 import jakarta.validation.constraints.NotNull;
@@ -20,7 +19,7 @@ public class TransacaoDTO {
 
     @NotNull
     @PositiveOrZero
-    private BigDecimal valor;
+    private Double valor;
 
     @NotNull
     @PastOrPresent
