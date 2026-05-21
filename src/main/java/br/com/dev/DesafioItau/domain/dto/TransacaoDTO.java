@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.PositiveOrZero;
 
 import lombok.AllArgsConstructor;
@@ -17,11 +18,12 @@ import lombok.NoArgsConstructor;
 @Builder
 public class TransacaoDTO {
 
-    @NotNull(message = "O valor é obrigatório")
-    @PositiveOrZero(message = "O valor deve ser zero ou maior que zero")
+    @NotNull
+    @PositiveOrZero
     private BigDecimal valor;
 
-    @NotNull(message = "A dataHora é obrigatória")
+    @NotNull
+    @PastOrPresent
     private OffsetDateTime dataHora;
 
 }
