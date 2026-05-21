@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.dev.DesafioItau.domain.dto.EstatisticaDTO;
 import br.com.dev.DesafioItau.service.iservice.TransacaoService;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -20,8 +22,10 @@ public class EstatisticaController {
     }
 
     @GetMapping
-    public EstatisticaDTO listarEstatisticas() {
-        return transacaoService.calcularEstatisticas();
+    public ResponseEntity<EstatisticaDTO> listarEstatisticas() {
+        
+        return ResponseEntity.status(HttpStatus.OK).body(transacaoService.calcularEstatisticas());
+
     }
     
 
