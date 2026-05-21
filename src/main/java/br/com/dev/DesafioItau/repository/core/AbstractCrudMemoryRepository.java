@@ -1,5 +1,6 @@
 package br.com.dev.DesafioItau.repository.core;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
@@ -38,6 +39,11 @@ public abstract class AbstractCrudMemoryRepository<T, ID> implements CrudMemoryR
     @Override
     public void deleteAll() {
         memoryDatabase.clear();
+    }
+
+    @Override
+    public List<T> findAll() {
+        return List.copyOf(memoryDatabase.values());
     }
 
 }

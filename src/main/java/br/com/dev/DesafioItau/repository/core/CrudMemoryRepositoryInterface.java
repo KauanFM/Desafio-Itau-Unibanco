@@ -1,5 +1,6 @@
 package br.com.dev.DesafioItau.repository.core;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface CrudMemoryRepositoryInterface<T, ID> {
@@ -11,5 +12,7 @@ public interface CrudMemoryRepositoryInterface<T, ID> {
     void deleteById(ID id);
 
     void deleteAll();
+
+    List<T> findAll();
 
 }
