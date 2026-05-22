@@ -47,9 +47,8 @@ public class TransacaoServiceImpl implements TransacaoService {
         OffsetDateTime limite = OffsetDateTime.now().minusSeconds(60);
 
         DoubleSummaryStatistics estatisticas = transacoes.stream()
-                .filter(t -> !t.getDataHora().isBefore(limite))
-                .map(Transacao::getValor)
-                .mapToDouble(Double::doubleValue)
+                .filter(t -> t.getDataHora().isAfter(limite))
+                .mapToDouble(Transacao::getValor)
                 .summaryStatistics();
 
         EstatisticaDTO estatisticaDTO = new EstatisticaDTO();
